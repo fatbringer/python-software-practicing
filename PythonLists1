@@ -24,3 +24,22 @@ if __name__ == '__main__':
             print(arr)
             
         i = i+1
+
+
+
+
+
+
+
+%##
+
+if __name__ == '__main__':
+    N = int(input())
+    arr = []
+    for i in range(N):
+        command, *n = input().split()
+        n = list(map(int,n))
+        if command == 'print':
+            print(arr)
+        else:
+            getattr(arr,command)(*n)
