@@ -49,7 +49,7 @@ So it is not whether ALL or NONE of them, but if ANY of them... what can you do 
 You use the any function!
 
 #%%
-
+ 
 
 if __name__ == '__main__':
     s = input()
