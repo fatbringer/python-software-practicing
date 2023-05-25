@@ -24,8 +24,7 @@ getattr gets the variable type of arr, which is list.
           These 2 lines are equivalent in their operation
 
 ### Reading input from stdin
-1) eg a = int(input()) 
-this reads the input and convert into a int. Else it is a string. 
+1) eg a = int(input())  ---> this reads the input and convert into a int. Else it is a string. 
 
 ### strings
 1) string.isalnum() 
@@ -47,9 +46,8 @@ binary = format(i, 'b')
 
 
 ### sets vs list
-sets only retain unique values, list retains whatever you put in 
-scores_set = set(scores)  #set only retains unique values
-you can convert a list into a set like that 
+sets only retain unique values, list retains whatever you put in\n
+scores_set = set(scores)  #set only retains unique values, you can convert a list into a set like that 
 
 ### itertools
 itertools.product() 
