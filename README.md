@@ -11,19 +11,20 @@ eg a = int(input())
 this reads the input and convert into a int. Else it is a string. 
 
 # strings
-1) string.isalnum() 
-  This method checks if all the characters of a string are alphanumeric (a-z, A-Z and 0-9).
-  print 'ab123'.isalnum()
-  True
-  print 'ab123#'.isalnum()
-  False
+> 1) string.isalnum() 
 
-2) str.isalpha()
+This method checks if all the characters of a string are alphanumeric (a-z, A-Z and 0-9).
+print 'ab123'.isalnum()
+True
+print 'ab123#'.isalnum()
+False
+
+> 2) str.isalpha()
 This method checks if all the characters of a string are alphabetical (a-z and A-Z).
 
->>> print 'abcD'.isalpha()
+print 'abcD'.isalpha()
 True
->>> print 'abcd1'.isalpha()
+print 'abcd1'.isalpha()
 False
 
 3) str.islower()
