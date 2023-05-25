@@ -18,10 +18,10 @@ getattr gets the variable type of arr, which is list.
 3) np.matmul --> to do matrix multiplication on 2 matrices (max is 2 for this function)
 4) np.array --> to convert a list into an array 
 5) np.linalg.inv --> to calculate the inverse of a matrix
-6)  @ operator --> usin the @ operator lets you do multiple matrix multiplcations in 1 line in that specified order
-     eg   Pmatrix = np.linalg.inv( np.matmul(np.matmul(H_trans, R_inv), Hmatrix)) 
-          Pmatrix = np.linalg.inv( H_trans @ R_inv @ Hmatrix)
-          These 2 lines are equivalent in their operation
+6)  @ operator --> usin the @ operator lets you do multiple matrix multiplcations in 1 line in that specified order                         
+     eg   Pmatrix = np.linalg.inv( np.matmul(np.matmul(H_trans, R_inv), Hmatrix))              
+          Pmatrix = np.linalg.inv( H_trans @ R_inv @ Hmatrix)              
+          These 2 lines are equivalent in their operation             
 
 ### Reading input from stdin
 1) eg a = int(input())  ---> this reads the input and convert into a int. Else it is a string. 
