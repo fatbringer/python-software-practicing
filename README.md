@@ -46,7 +46,7 @@ binary = format(i, 'b')
 
 
 ### sets vs list
-sets only retain unique values, list retains whatever you put in\n
+sets only retain unique values, list retains whatever you put in        
 scores_set = set(scores)  #set only retains unique values, you can convert a list into a set like that 
 
 ### itertools
