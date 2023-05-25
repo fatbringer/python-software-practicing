@@ -6,11 +6,11 @@ either for online courses or for platforms like hackerrank or something
 Here are some notable learnings
 
 ### non library specific
-1) getattr(arr,command)(*n) --> from practice number 6. 
-the *n operator is iterating operator.
-getattr will retrieve the type of the input and allow you to work on it like a variable
-eg here, arr is a list, and command can be "append" or "pop". 
-getattr gets the variable type of arr, which is list. 
+1) getattr(arr,command)(*n) --> from practice number 6.                    
+the *n operator is iterating operator.                      
+getattr will retrieve the type of the input and allow you to work on it like a variable                       
+eg here, arr is a list, and command can be "append" or "pop".                   
+getattr gets the variable type of arr, which is list.                 
 
 ### numpy
 1) np_array = numpy.array(arr, float)  --> converts a list called arr into a numpy array, you can specify the value type. Eg float int double 
@@ -37,10 +37,10 @@ getattr gets the variable type of arr, which is list.
 8) str.join() --> see #https://www.w3schools.com/python/ref_string_join.asp 
 
 ### numbers (int, octa, hexadecimal, binary) 
-normal = str(i)
-octal = format(i,'o')
-hexa = format(i, 'X')
-binary = format(i, 'b')
+normal = str(i)               
+octal = format(i,'o')                   
+hexa = format(i, 'X')              
+binary = format(i, 'b')                 
 
         
 
