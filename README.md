@@ -1,4 +1,8 @@
-# hackerrank-python
-Codes for hackerrank python
-I will try to solve a problem a day. But maybe i am slower so i take longer
+# software-practicing
+
+Here i put codes that i wrote in the past as practice
+either for online courses or for platforms like hackerrank or something
+
+Here are some notable learnings
+
 
