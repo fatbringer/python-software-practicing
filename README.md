@@ -24,7 +24,8 @@ getattr gets the variable type of arr, which is list.
           These 2 lines are equivalent in their operation             
 
 ### Reading input from stdin
-1) eg a = int(input())  ---> this reads the input and convert into a int. Else it is a string. 
+1) a = int(input())  ---> this reads the input and convert into a int. Else it is a string.         
+2) rooms = input().split() ----> splits a long input in a list. For eg,  1 4 5 a b c  becomes '1', '4', '5', 'a', 'b', 'c'   
 
 ### strings
 1) string.isalnum() 
