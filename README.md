@@ -43,7 +43,14 @@ hexa = format(i, 'X')
 binary = format(i, 'b')                 
 
         
+### dictionary
+1)  dictonary_name.items()  gives you key (key, value) tuples:
 
+### collections  
+import collections       
+from collections import Counter   #https://www.geeksforgeeks.org/python-collections-module/    
+> print(Counter(['B','B','A','B','C','A','B','B','A','C']))   #Counter gives you a dictionary                    
+> {'B': 5, 'A': 3, 'C': 2}         
 
 ### sets vs list
 sets only retain unique values, list retains whatever you put in        
