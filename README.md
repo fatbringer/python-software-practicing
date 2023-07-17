@@ -16,7 +16,48 @@ getattr gets the variable type of arr, which is list.
 ### opencv
 1) img = cv2.imread(imgfile)
 2) img.shape     -- this is actually a numpy command, img.shape[0] --> height, img.shape[1] --> width
-3) img.dtype     -- returns type of varialbe 
+3) img.dtype     -- returns type of varialbe
+4) cv2.imshow('name of window', img_variable)
+5) cv2.waitKey(0)     -- imshow() should be followed by function waitKey(), which specifies how long the image should be specified in milliseconds
+6) cv2.destroyAllWindows()      -- you need to do this else cv2.imshow won't work again in the same run
+7) For a colour image, imread() gives a 3D numpy array in BGR format
+     - img[:,:,0] --> Blue channel
+     - img[:,:,1] --> Green channel
+     - img[:,:,2] --> Red channel
+8) cv2.cvtcolor(img, cv2.COLOR_BGR2GRAY)      -- many conversion codes, see their docs
+9) cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)      -- convert grayscale back to BGR, but actually just copies the vals to 3 channels, you wont get back your colour information
+10) cv2.merge(imgc1, imgc2, imgc3)      -- stack the channels together
+11) cv2.copyMakeBorder(img, top, btm, left, right, borderType)      --  cv2.BORDER_REPLICATE, cv2.BORDER_REFLECT, cv2.BORDER_WRAP,  cv2.BORDER_CONSTANT
+12) cv2.line
+13) cv2.circle
+14) cv2.rectangle
+15) cv2.ellipse
+16) cv2.putText
+17) cv2.resize      -- common methods cv2.INTER_AREA, cv2.INTER_LINEAR, cv2.INTER_CUBIC, cv2.INTER_NEAREST
+18) cv2.affine(img, transform_matrix, (output height,output width))
+19) cv2.getRotationMatrix2D
+20) cv2.equalizeHist      -- histogram equalisation, gives less confusing edges when doing edge detection
+21) cv2.createCLAHE()      -- CLAHE Contrast limited adapative histogram equalisation, visually clearer
+     clahe.apply(img)
+22) cv2.threshold
+23) cv2.filter(img, intensity, kernel)      -- for filtering using self defined kernel... convolutions
+24) cv2.blur(img, (kernelsize,kernelsize))      -- mean filtering
+25) cv2.GaussianBlur(img, (kernelsize,kernelsize), val)      -- val is sigma value, set to 0 to let opencv decide
+26) cv2.medianBlur
+27) To sharpen image...where nuc is image file. Values are not fixed, just an example
+> krn = np.ones((11,11),np.float32)/121
+> mnuc = cv2.filter2D(nuc,-1,krn)
+> sharpen = (np.float32(nuc)*2 - np.float32(mnuc))/255
+> Note: sharpening introduces noise into image
+28) canny_edges = cv2.Canny(img, minval, maxval, 3)      -- last argument is kernel size, usually defaults to 3, can use 5 or 7 too
+> contours = cv2.findContours     -- find contours
+> cv2.drawContours     -- draw contours
+
+### matplotlib.pylot as plt
+1) plt.axis('on') or plt.axis('off')
+2) plt.imshow
+3) plt.show
+4) plt.hist.img.ravel()
 
 ### numpy
 1) np_array = numpy.array(arr, float)  --> converts a list called arr into a numpy array, you can specify the value type. Eg float int double 
