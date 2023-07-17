@@ -52,6 +52,7 @@ getattr gets the variable type of arr, which is list.
 28) canny_edges = cv2.Canny(img, minval, maxval, 3)      -- last argument is kernel size, usually defaults to 3, can use 5 or 7 too
 > contours = cv2.findContours     -- find contours
 > cv2.drawContours     -- draw contours
+> 
 
 ### matplotlib.pylot as plt
 1) plt.axis('on') or plt.axis('off')
