@@ -10,7 +10,13 @@ Here are some notable learnings
 the *n operator is iterating operator.                      
 getattr will retrieve the type of the input and allow you to work on it like a variable                       
 eg here, arr is a list, and command can be "append" or "pop".                   
-getattr gets the variable type of arr, which is list.                 
+getattr gets the variable type of arr, which is list.
+
+
+### opencv
+1) img = cv2.imread(imgfile)
+2) img.shape     -- this is actually a numpy command, img.shape[0] --> height, img.shape[1] --> width
+3) img.dtype     -- returns type of varialbe 
 
 ### numpy
 1) np_array = numpy.array(arr, float)  --> converts a list called arr into a numpy array, you can specify the value type. Eg float int double 
