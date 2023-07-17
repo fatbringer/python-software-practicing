@@ -39,7 +39,7 @@ getattr gets the variable type of arr, which is list.
 20) cv2.equalizeHist      -- histogram equalisation, gives less confusing edges when doing edge detection
 21) cv2.createCLAHE()      -- CLAHE Contrast limited adapative histogram equalisation, visually clearer
      clahe.apply(img)
-22) cv2.threshold
+22) cv2.threshold          -- remember Otsu thresholding too
 23) cv2.filter(img, intensity, kernel)      -- for filtering using self defined kernel... convolutions
 24) cv2.blur(img, (kernelsize,kernelsize))      -- mean filtering
 25) cv2.GaussianBlur(img, (kernelsize,kernelsize), val)      -- val is sigma value, set to 0 to let opencv decide
@@ -52,7 +52,42 @@ getattr gets the variable type of arr, which is list.
 28) canny_edges = cv2.Canny(img, minval, maxval, 3)      -- last argument is kernel size, usually defaults to 3, can use 5 or 7 too
 > contours = cv2.findContours     -- find contours
 > cv2.drawContours     -- draw contours
-> 
+
+29) Haar Cascade classifier/Viola Jones algorithm
+> fce = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')  #or whatever xml file
+> face= fce.detectMultiScale(img, scaleFactor, minNeighbours)
+> sml = cv2.CascadeClassifier('haarcascade_smile.xml')      # or whatever your xml file name is
+> smle= sml.detectMultiScale(fcb, scaleFactor=1.3, minNeighbors=10) # or whatever numbers
+
+30) CaffeModel/GoogLeNet
+> prototxt = 'bvlc_googlenet.prototxt'
+> caffemodel= 'bvlc_googlenet.caffemodel'
+> net = cv2.dnn.readNetFromCaffe(prototxt,caffemodel)
+> blob = cv2.dnn.blobFromImage(image=img, scalefactor, outputsize, mean, swapRB, crop)
+> net.setInput(blob)
+> preds = net.forward()
+
+31) cv2.dilate     -- grow everything    
+32) cv2.erode     -- shave off from everything
+
+33) yolov3 in opencv
+> yoloconfig = 'yolov3.cfg'
+> yoloweights= 'yolov3.weights'
+> net = cv2.dnn.readNet(yoloweights,yoloconfig)
+> blob = cv2.dnn.blobFromImage(image=img, scalefactor, outputsize, mean, swapRB, crop)
+> net.setInput(blob)
+> outLyrs = getOutputLayers(net)  #get output layers
+> preds = net.forward(outLyrs)      #Run the actual object detection.
+> cv2.dnn.NMSBoxes(bboxes=boxes, scores=confidences, score_threshold=scoreThres, nms_threshold=nmsThres) #do non max suppression
+
+34) cv2.morphologyEx
+
+### For Morphological snake 
+### morphsnakes as ms
+ms.inverse_gaussian_gradient(img, alpha, sigma)
+ms.circle_level_set(img.shape, (centerx, centery), radius)
+ms.visual2d      -- visualisation callback
+ms.morphological_geodesic_active_contour(inversegauss, iterations, init, smoothing, threshold, balloon, iter_callback=back)
 
 ### matplotlib.pylot as plt
 1) plt.axis('on') or plt.axis('off')
