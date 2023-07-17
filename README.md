@@ -84,10 +84,10 @@ getattr gets the variable type of arr, which is list.
 
 ### For Morphological snake 
 ### morphsnakes as ms
-ms.inverse_gaussian_gradient(img, alpha, sigma)
-ms.circle_level_set(img.shape, (centerx, centery), radius)
-ms.visual2d      -- visualisation callback
-ms.morphological_geodesic_active_contour(inversegauss, iterations, init, smoothing, threshold, balloon, iter_callback=back)
+1) ms.inverse_gaussian_gradient(img, alpha, sigma)
+2) ms.circle_level_set(img.shape, (centerx, centery), radius)
+3) ms.visual2d      -- visualisation callback
+4) ms.morphological_geodesic_active_contour(inversegauss, iterations, init, smoothing, threshold, balloon, iter_callback=back)
 
 ### matplotlib.pylot as plt
 1) plt.axis('on') or plt.axis('off')
