@@ -20,37 +20,39 @@ getattr gets the variable type of arr, which is list.
 4) img.dtype     -- returns type of varialbe
 5) cv2.imshow('name of window', img_variable)
 6) cv2.videowriter
-   fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # deciding codec and video format 
-   fps = 30
-   cv2.VideoWriter(output_path_name, fourcc, fps, (sampleimage_w, sampleimage_h ))
-7) 
-8) cv2.waitKey(0)     -- imshow() should be followed by function waitKey(), which specifies how long the image should be specified in milliseconds
-9) cv2.destroyAllWindows()      -- you need to do this else cv2.imshow won't work again in the same run
-10) For a colour image, imread() gives a 3D numpy array in BGR format
+ >  fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # deciding codec and video format     \
+ >  fps = 30                                                                        \
+ >  cv2.VideoWriter(output_path_name, fourcc, fps, (sampleimage_w, sampleimage_h )) \
+ >  pls rmb to do "video.release()"                                                 \
+   
+8) 
+9) cv2.waitKey(0)     -- imshow() should be followed by function waitKey(), which specifies how long the image should be specified in milliseconds
+10) cv2.destroyAllWindows()      -- you need to do this else cv2.imshow won't work again in the same run
+11) For a colour image, imread() gives a 3D numpy array in BGR format
      - img[:,:,0] --> Blue channel
      - img[:,:,1] --> Green channel
      - img[:,:,2] --> Red channel
-11) cv2.cvtcolor(img, cv2.COLOR_BGR2GRAY)      -- many conversion codes, see their docs
-12) cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)      -- convert grayscale back to BGR, but actually just copies the vals to 3 channels, you wont get back your colour information
-13) cv2.merge(imgc1, imgc2, imgc3)      -- stack the channels together
-14) cv2.copyMakeBorder(img, top, btm, left, right, borderType)      --  cv2.BORDER_REPLICATE, cv2.BORDER_REFLECT, cv2.BORDER_WRAP,  cv2.BORDER_CONSTANT
-15) cv2.line
-16) cv2.circle
-17) cv2.rectangle
-18) cv2.ellipse
-19) cv2.putText
-20) cv2.resize      -- common methods cv2.INTER_AREA, cv2.INTER_LINEAR, cv2.INTER_CUBIC, cv2.INTER_NEAREST
-21) cv2.affine(img, transform_matrix, (output height,output width))
-22) cv2.getRotationMatrix2D
-23) cv2.equalizeHist      -- histogram equalisation, gives less confusing edges when doing edge detection
-24) cv2.createCLAHE()      -- CLAHE Contrast limited adapative histogram equalisation, visually clearer
+12) cv2.cvtcolor(img, cv2.COLOR_BGR2GRAY)      -- many conversion codes, see their docs
+13) cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)      -- convert grayscale back to BGR, but actually just copies the vals to 3 channels, you wont get back your colour information
+14) cv2.merge(imgc1, imgc2, imgc3)      -- stack the channels together
+15) cv2.copyMakeBorder(img, top, btm, left, right, borderType)      --  cv2.BORDER_REPLICATE, cv2.BORDER_REFLECT, cv2.BORDER_WRAP,  cv2.BORDER_CONSTANT
+16) cv2.line
+17) cv2.circle
+18) cv2.rectangle
+19) cv2.ellipse
+20) cv2.putText
+21) cv2.resize      -- common methods cv2.INTER_AREA, cv2.INTER_LINEAR, cv2.INTER_CUBIC, cv2.INTER_NEAREST
+22) cv2.affine(img, transform_matrix, (output height,output width))
+23) cv2.getRotationMatrix2D
+24) cv2.equalizeHist      -- histogram equalisation, gives less confusing edges when doing edge detection
+25) cv2.createCLAHE()      -- CLAHE Contrast limited adapative histogram equalisation, visually clearer
      clahe.apply(img)
-25) cv2.threshold          -- remember Otsu thresholding too
-26) cv2.filter(img, intensity, kernel)      -- for filtering using self defined kernel... convolutions
-27) cv2.blur(img, (kernelsize,kernelsize))      -- mean filtering
-28) cv2.GaussianBlur(img, (kernelsize,kernelsize), val)      -- val is sigma value, set to 0 to let opencv decide
-29) cv2.medianBlur
-30) To sharpen image...where nuc is image file. Values are not fixed, just an example
+26) cv2.threshold          -- remember Otsu thresholding too
+27) cv2.filter(img, intensity, kernel)      -- for filtering using self defined kernel... convolutions
+28) cv2.blur(img, (kernelsize,kernelsize))      -- mean filtering
+29) cv2.GaussianBlur(img, (kernelsize,kernelsize), val)      -- val is sigma value, set to 0 to let opencv decide
+30) cv2.medianBlur
+31) To sharpen image...where nuc is image file. Values are not fixed, just an example
 > krn = np.ones((11,11),np.float32)/121
 > mnuc = cv2.filter2D(nuc,-1,krn)
 > sharpen = (np.float32(nuc)*2 - np.float32(mnuc))/255
